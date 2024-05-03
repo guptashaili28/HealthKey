@@ -28,7 +28,7 @@ import {
 import { FaMoon, FaSun } from "react-icons/fa";
 import { Link } from "react-router-dom";
 // import Logo from "./logo";
-// import logo from "./main-logo.png"
+import mainLogo from "../assets/main-logo.png";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -57,10 +57,17 @@ const Header = (props) => {
 
   return (
     <NavBarContainer {...props} bg={"bg"}>
-      <Link to={"/"}>
-      {/* <logo src={logo} alt="logo" /> */}
-
+      <Link to={"/"} style={{ textDecoration: "none", color: "inherit" }}>
+        <div className="d-flex align-items-center">
+          <img
+            src={mainLogo}
+            alt="HealthKey"
+            style={{ height: "60px", width: "70px" }}
+          />
+          <span className="ml-2">HealthKey</span>
+        </div>
       </Link>
+
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} isLoggedIn={isLoggedIn} />
     </NavBarContainer>
