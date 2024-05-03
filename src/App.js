@@ -27,7 +27,7 @@ const App = () => {
 
         <Route path="/publicdashboard" element={<PublicDashboard/>} />
       </Routes>
-  
+      <Footer />
     </ChakraProvider>
   );
 };
